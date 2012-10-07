@@ -9,28 +9,20 @@
  */
 
 // container sizes (add 1.25em for breakpoint)
-@small      : 33.125em;
+@small      : 37.5em;
 @medium     : 47.5em;
 @standard   : 61.25em;
 @large      : 75em;
 @hidef      : 100em;
 
-@one-fifth  : 1 / 5;
-@two-fifth  : 2 / 5;
-@three-fifth: 3 / 5;
-@four-fifth : 4 / 5;
+@gutter     : 1.25em;
+@padding    : @gutter / 2;
 
-@one    : 1 / 12;
-@two    : 2 / 12;
-@three  : 3 / 12;
-@four   : 4 / 12;
-@five   : 5 / 12;
-@six    : 6 / 12;
-@seven  : 7 / 12;
-@eight  : 8 / 12;
-@nine   : 9 / 12;
-@ten    : 10 / 12;
-@eleven : 11 / 12;
+@smallColumn    : ((@small - @padding) / 12) - @gutter;
+@mediumColumn   : ((@medium - @padding) / 12) - @gutter;
+@standardColumn : ((@standard - @padding) / 12) - @gutter;
+@largeColumn    : ((@large - @padding) / 12) - @gutter;
+@hidefColumn    : ((@hidef - @padding) / 12) - @gutter;
 
 body {
     font-size: 16px;
@@ -49,134 +41,103 @@ body {
     clear: both;
     visibility: hidden;
 }
-.mqMiniCols() {
-    .container {
-        width: auto;
-        .columns {
-            float: left;
-            margin-left: 5%;
-            width: 30%;
-            &:first-child, &.first {
-                margin-left: 0;
-            }
-            &.two, &.three, &.one-fourth, &.four, &.one-third {
-                width: 30%;
-            }
-            &.five, &.six, &.one-half, &.seven, &.eight, &.two-thirds {
-                width: 60%;
-            }
-            &.nine, &.three-fourths, &.ten, &.eleven, &.twelve {
-                width: 100%;
-            }
-        }
-        .offset-one, .offset-two, .offset-three, .offset-one-fourth, .offset-four, .offset-one-third {
-            padding-left: 30%;
-        }
-        .offset-five, .offset-six, .offset-one-half, .offset-seven, .offset-eight, .offset-two-thirds {
-            padding-left: 65%;
-        }
-        .offset-nine, .offset-three-fourths, .offset-ten, .offset-eleven, .offset-twelve {
-            padding-left: 100%;
-        }
-    }
-}
-.mqCols(@container: @standard) {
+.mqCols(@container: @standard, @column: @standardColumn) {
     .container {
         width: @container;
         .columns {
             float: left;
-            margin-left: (@container * @one / 3);
-            width: @container * @one;
+            margin-left: @gutter;
+            width: @column;
             &:first-child, &.first {
                 margin-left: 0;
             }
             &.two {
-                width: @container * @two;
+                width: @column * 2 + @gutter;
             }
             &.three, &.one-fourth {
-                width: @container * @three;
+                width: @column * 3 + @gutter * 2;
             }
             &.four, &.one-third {
-                width: @container * @four;
+                width: @column * 4 + @gutter * 3;
             }
             &.five {
-                width: @container * @five;
+                width: @column * 5 + @gutter * 4;
             }
             &.six, &.one-half {
-                width: @container * @six;
+                width: @column * 6 + @gutter * 5;
             }
             &.seven {
-                width: @container * @seven;
+                width: @column * 7 + @gutter * 6;
             }
             &.eight, &.two-thirds {
-                width: @container * @eight;
+                width: @column * 8 + @gutter * 7;
             }
             &.nine, &.three-fourths {
-                width: @container * @nine;
+                width: @column * 9 + @gutter * 8;
             }
             &.ten {
-                width: @container * @ten;
+                width: @column * 10 + @gutter * 9;
             }
             &.eleven {
-                width: @container * @eleven;
+                width: @column * 11 + @gutter * 10;
             }
             &.twelve {
                 width: @container;
             }
         }
         .offset-one {
-            padding-left: @container * @one;
+            padding-left: @column + @gutter;
         }
         .offset-two {
-            padding-left: @container * @two + (@container * @one / 3);
+            padding-left: @column * 2 + @gutter;
         }
         .offset-three, .offset-one-fourth {
-            padding-left: @container * @three + (@container * @two / 3);
+            padding-left: @column * 3 + @gutter * 2;
         }
         .offset-four, .offset-one-third {
-            padding-left: @container * @four + (@container * @three / 3);
+            padding-left: @column * 4 + @gutter * 3;
         }
         .offset-five {
-            padding-left: @container * @five + (@container * @four / 3);
+            padding-left: @column * 5 + @gutter * 4;
         }
         .offset-six, .offset-one-half {
-            padding-left: @container * @six + (@container * @five / 3);
+            padding-left: @column * 6 + @gutter * 5;
         }
         .offset-seven {
-            padding-left: @container * @seven + (@container * @six / 3);
+            padding-left: @column * 7 + @gutter * 6;
         }
         .offset-eight, .offset-two-thirds {
-            padding-left: @container * @eight + (@container * @seven / 3);
+            padding-left: @column * 8 + @gutter * 7;
         }
         .offset-nine, .offset-three-fourths {
-            padding-left: @container * @nine + (@container * @eight / 3);
+            padding-left: @column * 9 + @gutter * 8;
         }
         .offset-ten {
-            padding-left: @container * @ten + (@container * @nine / 3);
+            padding-left: @column * 10 + @gutter * 9;
         }
         .offset-eleven {
-            padding-left: @container * @eleven + (@container * @ten / 3);
+            padding-left: @column * 11 + @gutter * 10;
         }
         .offset-twelve {
-            padding-left: @container + (@container * @eleven / 3);
+            padding-left: @container;
         }
     }
 }
-@media screen and (min-width: 34.375em) {
-    .mqMiniCols();
+@media screen and (min-width: 37.5em) {
+    .mqCols(@small, @smallColumn);
 }
 @media screen and (min-width: 48.75em) {
-    .mqCols(@medium);
+    .mqCols(@medium, @mediumColumn);
 }
 @media screen and (min-width: 62.5em) {
-    .mqCols(@standard);
+    .mqCols(@standard, @standardColumn);
 }
 @media screen and (min-width: 76.25em) {
-    .mqCols(@large);
+    .mqCols(@large, @largeColumn);
 }
 @media screen and (min-width: 101.25em) {
-    .mqCols(@hidef);
+    .mqCols(@hidef, @hidefColumn);
 }
 html.oldie {
-    .mqCols(@standard);
+    .mqCols(@standard, @standardColumn);
 }
