@@ -8,7 +8,7 @@
  * v0.1, 2012/10/06
  */
 
-// container sizes (add 1.25em for breakpoint)
+// container sizes
 @small      : 37.5em;
 @medium     : 47.5em;
 @standard   : 61.25em;
@@ -126,16 +126,16 @@ body {
 @media screen and (min-width: 37.5em) {
     .mqCols(@small, @smallColumn);
 }
-@media screen and (min-width: 48.75em) {
+@media screen and (min-width: 47.5em) {
     .mqCols(@medium, @mediumColumn);
 }
-@media screen and (min-width: 62.5em) {
+@media screen and (min-width: 61.25em) {
     .mqCols(@standard, @standardColumn);
 }
-@media screen and (min-width: 76.25em) {
+@media screen and (min-width: 75em) {
     .mqCols(@large, @largeColumn);
 }
-@media screen and (min-width: 101.25em) {
+@media screen and (min-width: 100em) {
     .mqCols(@hidef, @hidefColumn);
 }
 html.oldie {
