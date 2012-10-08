@@ -23,188 +23,95 @@ body {
 }
 @media screen and (min-width: 37.5em) {
   .container {
-    width: 37.5em;
+    width: auto;
   }
   .container .columns {
     float: left;
-    margin-left: 1.25em;
-    width: 1.8229166666666665em;
+    margin-left: 1%;
+    width: 7.333333333%;
   }
   .container .columns:first-child,
   .container .columns.first {
     margin-left: 0;
   }
   .container .columns.two {
-    width: 4.895833333333333em;
+    width: 15.666666666%;
   }
   .container .columns.three,
   .container .columns.one-fourth {
-    width: 7.96875em;
+    width: 23.999999999%;
   }
   .container .columns.four,
   .container .columns.one-third {
-    width: 11.041666666666666em;
+    width: 32.333333331999995%;
   }
   .container .columns.five {
-    width: 14.114583333333332em;
+    width: 40.666666665%;
   }
   .container .columns.six,
   .container .columns.one-half {
-    width: 17.1875em;
+    width: 48.999999998%;
   }
   .container .columns.seven {
-    width: 20.260416666666664em;
+    width: 57.333333331%;
   }
   .container .columns.eight,
   .container .columns.two-thirds {
-    width: 23.333333333333332em;
+    width: 65.66666666399999%;
   }
   .container .columns.nine,
   .container .columns.three-fourths {
-    width: 26.40625em;
+    width: 73.999999997%;
   }
   .container .columns.ten {
-    width: 29.479166666666664em;
+    width: 82.33333333%;
   }
   .container .columns.eleven {
-    width: 32.55208333333333em;
+    width: 90.666666663%;
   }
   .container .columns.twelve {
-    width: 37.5em;
+    width: auto;
   }
   .container .offset-one {
-    padding-left: 3.0729166666666665em;
+    padding-left: 8.333333332999999%;
   }
   .container .offset-two {
-    padding-left: 4.895833333333333em;
+    padding-left: 15.666666666%;
   }
   .container .offset-three,
   .container .offset-one-fourth {
-    padding-left: 7.96875em;
+    padding-left: 23.999999999%;
   }
   .container .offset-four,
   .container .offset-one-third {
-    padding-left: 11.041666666666666em;
+    padding-left: 32.333333331999995%;
   }
   .container .offset-five {
-    padding-left: 14.114583333333332em;
+    padding-left: 40.666666665%;
   }
   .container .offset-six,
   .container .offset-one-half {
-    padding-left: 17.1875em;
+    padding-left: 48.999999998%;
   }
   .container .offset-seven {
-    padding-left: 20.260416666666664em;
+    padding-left: 57.333333331%;
   }
   .container .offset-eight,
   .container .offset-two-thirds {
-    padding-left: 23.333333333333332em;
+    padding-left: 65.66666666399999%;
   }
   .container .offset-nine,
   .container .offset-three-fourths {
-    padding-left: 26.40625em;
+    padding-left: 73.999999997%;
   }
   .container .offset-ten {
-    padding-left: 29.479166666666664em;
+    padding-left: 82.33333333%;
   }
   .container .offset-eleven {
-    padding-left: 32.55208333333333em;
+    padding-left: 90.666666663%;
   }
   .container .offset-twelve {
-    padding-left: 37.5em;
-  }
-}
-@media screen and (min-width: 47.5em) {
-  .container {
-    width: 47.5em;
-  }
-  .container .columns {
-    float: left;
-    margin-left: 1.25em;
-    width: 2.65625em;
-  }
-  .container .columns:first-child,
-  .container .columns.first {
-    margin-left: 0;
-  }
-  .container .columns.two {
-    width: 6.5625em;
-  }
-  .container .columns.three,
-  .container .columns.one-fourth {
-    width: 10.46875em;
-  }
-  .container .columns.four,
-  .container .columns.one-third {
-    width: 14.375em;
-  }
-  .container .columns.five {
-    width: 18.28125em;
-  }
-  .container .columns.six,
-  .container .columns.one-half {
-    width: 22.1875em;
-  }
-  .container .columns.seven {
-    width: 26.09375em;
-  }
-  .container .columns.eight,
-  .container .columns.two-thirds {
-    width: 30em;
-  }
-  .container .columns.nine,
-  .container .columns.three-fourths {
-    width: 33.90625em;
-  }
-  .container .columns.ten {
-    width: 37.8125em;
-  }
-  .container .columns.eleven {
-    width: 41.71875em;
-  }
-  .container .columns.twelve {
-    width: 47.5em;
-  }
-  .container .offset-one {
-    padding-left: 3.90625em;
-  }
-  .container .offset-two {
-    padding-left: 6.5625em;
-  }
-  .container .offset-three,
-  .container .offset-one-fourth {
-    padding-left: 10.46875em;
-  }
-  .container .offset-four,
-  .container .offset-one-third {
-    padding-left: 14.375em;
-  }
-  .container .offset-five {
-    padding-left: 18.28125em;
-  }
-  .container .offset-six,
-  .container .offset-one-half {
-    padding-left: 22.1875em;
-  }
-  .container .offset-seven {
-    padding-left: 26.09375em;
-  }
-  .container .offset-eight,
-  .container .offset-two-thirds {
-    padding-left: 30em;
-  }
-  .container .offset-nine,
-  .container .offset-three-fourths {
-    padding-left: 33.90625em;
-  }
-  .container .offset-ten {
-    padding-left: 37.8125em;
-  }
-  .container .offset-eleven {
-    padding-left: 41.71875em;
-  }
-  .container .offset-twelve {
-    padding-left: 47.5em;
+    padding-left: auto;
   }
 }
 @media screen and (min-width: 61.25em) {
