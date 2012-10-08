@@ -1,5 +1,4 @@
 @charset "utf-8";
-
 /*
  * grid.less
  * Created by Aki Braun on 2012/10/06
@@ -118,9 +117,13 @@ body {
         .offset-eleven {
             padding-left: @column * 11 + @gutter * 10;
         }
-        .offset-twelve {
+        .padding (@container) when (@container = auto) {
+            padding-left: 100%;
+        }
+        .padding (@container) when (isnumber(@container)) {
             padding-left: @container;
         }
+        .padding(@container);
     }
 }
 @media screen and (min-width: 37.5em) {

@@ -26,6 +26,7 @@ body {
 @media screen and (min-width: 37.5em) {
   .container {
     width: auto;
+    padding-left: 100%;
   }
   .container .columns {
     float: left;
@@ -102,13 +103,11 @@ body {
   .container .offset-eleven {
     padding-left: 90.666666663%;
   }
-  .container .offset-twelve {
-    padding-left: auto;
-  }
 }
 @media screen and (min-width: 61.25em) {
   .container {
     width: 61.25em;
+    padding-left: 61.25em;
   }
   .container .columns {
     float: left;
@@ -185,13 +184,11 @@ body {
   .container .offset-eleven {
     padding-left: 54.322916666666664em;
   }
-  .container .offset-twelve {
-    padding-left: 61.25em;
-  }
 }
 @media screen and (min-width: 75em) {
   .container {
     width: 75em;
+    padding-left: 75em;
   }
   .container .columns {
     float: left;
@@ -268,13 +265,11 @@ body {
   .container .offset-eleven {
     padding-left: 66.92708333333334em;
   }
-  .container .offset-twelve {
-    padding-left: 75em;
-  }
 }
 @media screen and (min-width: 100em) {
   .container {
     width: 100em;
+    padding-left: 100em;
   }
   .container .columns {
     float: left;
@@ -351,12 +346,10 @@ body {
   .container .offset-eleven {
     padding-left: 89.84375em;
   }
-  .container .offset-twelve {
-    padding-left: 100em;
-  }
 }
 html.oldie .container {
   width: 61.25em;
+  padding-left: 61.25em;
 }
 html.oldie .container .columns {
   float: left;
@@ -432,7 +425,4 @@ html.oldie .container .offset-ten {
 }
 html.oldie .container .offset-eleven {
   padding-left: 54.322916666666664em;
-}
-html.oldie .container .offset-twelve {
-  padding-left: 61.25em;
 }
