@@ -39,30 +39,25 @@ body {
   .container .columns.two {
     width: 15.666666666%;
   }
-  .container .columns.three,
-  .container .columns.one-fourth {
+  .container .columns.three {
     width: 23.999999999%;
   }
-  .container .columns.four,
-  .container .columns.one-third {
+  .container .columns.four {
     width: 32.333333331999995%;
   }
   .container .columns.five {
     width: 40.666666665%;
   }
-  .container .columns.six,
-  .container .columns.one-half {
+  .container .columns.six {
     width: 48.999999998%;
   }
   .container .columns.seven {
     width: 57.333333331%;
   }
-  .container .columns.eight,
-  .container .columns.two-thirds {
+  .container .columns.eight {
     width: 65.66666666399999%;
   }
-  .container .columns.nine,
-  .container .columns.three-fourths {
+  .container .columns.nine {
     width: 73.999999997%;
   }
   .container .columns.ten {
@@ -80,30 +75,25 @@ body {
   .container .offset-two {
     padding-left: 15.666666666%;
   }
-  .container .offset-three,
-  .container .offset-one-fourth {
+  .container .offset-three {
     padding-left: 23.999999999%;
   }
-  .container .offset-four,
-  .container .offset-one-third {
+  .container .offset-four {
     padding-left: 32.333333331999995%;
   }
   .container .offset-five {
     padding-left: 40.666666665%;
   }
-  .container .offset-six,
-  .container .offset-one-half {
+  .container .offset-six {
     padding-left: 48.999999998%;
   }
   .container .offset-seven {
     padding-left: 57.333333331%;
   }
-  .container .offset-eight,
-  .container .offset-two-thirds {
+  .container .offset-eight {
     padding-left: 65.66666666399999%;
   }
-  .container .offset-nine,
-  .container .offset-three-fourths {
+  .container .offset-nine {
     padding-left: 73.999999997%;
   }
   .container .offset-ten {
@@ -132,30 +122,25 @@ body {
   .container .columns.two {
     width: 8.854166666666666em;
   }
-  .container .columns.three,
-  .container .columns.one-fourth {
+  .container .columns.three {
     width: 13.90625em;
   }
-  .container .columns.four,
-  .container .columns.one-third {
+  .container .columns.four {
     width: 18.958333333333332em;
   }
   .container .columns.five {
     width: 24.010416666666664em;
   }
-  .container .columns.six,
-  .container .columns.one-half {
+  .container .columns.six {
     width: 29.0625em;
   }
   .container .columns.seven {
     width: 34.11458333333333em;
   }
-  .container .columns.eight,
-  .container .columns.two-thirds {
+  .container .columns.eight {
     width: 39.166666666666664em;
   }
-  .container .columns.nine,
-  .container .columns.three-fourths {
+  .container .columns.nine {
     width: 44.21875em;
   }
   .container .columns.ten {
@@ -173,30 +158,25 @@ body {
   .container .offset-two {
     padding-left: 8.854166666666666em;
   }
-  .container .offset-three,
-  .container .offset-one-fourth {
+  .container .offset-three {
     padding-left: 13.90625em;
   }
-  .container .offset-four,
-  .container .offset-one-third {
+  .container .offset-four {
     padding-left: 18.958333333333332em;
   }
   .container .offset-five {
     padding-left: 24.010416666666664em;
   }
-  .container .offset-six,
-  .container .offset-one-half {
+  .container .offset-six {
     padding-left: 29.0625em;
   }
   .container .offset-seven {
     padding-left: 34.11458333333333em;
   }
-  .container .offset-eight,
-  .container .offset-two-thirds {
+  .container .offset-eight {
     padding-left: 39.166666666666664em;
   }
-  .container .offset-nine,
-  .container .offset-three-fourths {
+  .container .offset-nine {
     padding-left: 44.21875em;
   }
   .container .offset-ten {
@@ -225,30 +205,25 @@ body {
   .container .columns.two {
     width: 11.145833333333334em;
   }
-  .container .columns.three,
-  .container .columns.one-fourth {
+  .container .columns.three {
     width: 17.34375em;
   }
-  .container .columns.four,
-  .container .columns.one-third {
+  .container .columns.four {
     width: 23.541666666666668em;
   }
   .container .columns.five {
     width: 29.739583333333336em;
   }
-  .container .columns.six,
-  .container .columns.one-half {
+  .container .columns.six {
     width: 35.9375em;
   }
   .container .columns.seven {
     width: 42.13541666666667em;
   }
-  .container .columns.eight,
-  .container .columns.two-thirds {
+  .container .columns.eight {
     width: 48.333333333333336em;
   }
-  .container .columns.nine,
-  .container .columns.three-fourths {
+  .container .columns.nine {
     width: 54.53125em;
   }
   .container .columns.ten {
@@ -266,30 +241,25 @@ body {
   .container .offset-two {
     padding-left: 11.145833333333334em;
   }
-  .container .offset-three,
-  .container .offset-one-fourth {
+  .container .offset-three {
     padding-left: 17.34375em;
   }
-  .container .offset-four,
-  .container .offset-one-third {
+  .container .offset-four {
     padding-left: 23.541666666666668em;
   }
   .container .offset-five {
     padding-left: 29.739583333333336em;
   }
-  .container .offset-six,
-  .container .offset-one-half {
+  .container .offset-six {
     padding-left: 35.9375em;
   }
   .container .offset-seven {
     padding-left: 42.13541666666667em;
   }
-  .container .offset-eight,
-  .container .offset-two-thirds {
+  .container .offset-eight {
     padding-left: 48.333333333333336em;
   }
-  .container .offset-nine,
-  .container .offset-three-fourths {
+  .container .offset-nine {
     padding-left: 54.53125em;
   }
   .container .offset-ten {
@@ -318,30 +288,25 @@ body {
   .container .columns.two {
     width: 15.3125em;
   }
-  .container .columns.three,
-  .container .columns.one-fourth {
+  .container .columns.three {
     width: 23.59375em;
   }
-  .container .columns.four,
-  .container .columns.one-third {
+  .container .columns.four {
     width: 31.875em;
   }
   .container .columns.five {
     width: 40.15625em;
   }
-  .container .columns.six,
-  .container .columns.one-half {
+  .container .columns.six {
     width: 48.4375em;
   }
   .container .columns.seven {
     width: 56.71875em;
   }
-  .container .columns.eight,
-  .container .columns.two-thirds {
+  .container .columns.eight {
     width: 65em;
   }
-  .container .columns.nine,
-  .container .columns.three-fourths {
+  .container .columns.nine {
     width: 73.28125em;
   }
   .container .columns.ten {
@@ -359,30 +324,25 @@ body {
   .container .offset-two {
     padding-left: 15.3125em;
   }
-  .container .offset-three,
-  .container .offset-one-fourth {
+  .container .offset-three {
     padding-left: 23.59375em;
   }
-  .container .offset-four,
-  .container .offset-one-third {
+  .container .offset-four {
     padding-left: 31.875em;
   }
   .container .offset-five {
     padding-left: 40.15625em;
   }
-  .container .offset-six,
-  .container .offset-one-half {
+  .container .offset-six {
     padding-left: 48.4375em;
   }
   .container .offset-seven {
     padding-left: 56.71875em;
   }
-  .container .offset-eight,
-  .container .offset-two-thirds {
+  .container .offset-eight {
     padding-left: 65em;
   }
-  .container .offset-nine,
-  .container .offset-three-fourths {
+  .container .offset-nine {
     padding-left: 73.28125em;
   }
   .container .offset-ten {
@@ -410,30 +370,25 @@ html.oldie .container .columns.first {
 html.oldie .container .columns.two {
   width: 8.854166666666666em;
 }
-html.oldie .container .columns.three,
-html.oldie .container .columns.one-fourth {
+html.oldie .container .columns.three {
   width: 13.90625em;
 }
-html.oldie .container .columns.four,
-html.oldie .container .columns.one-third {
+html.oldie .container .columns.four {
   width: 18.958333333333332em;
 }
 html.oldie .container .columns.five {
   width: 24.010416666666664em;
 }
-html.oldie .container .columns.six,
-html.oldie .container .columns.one-half {
+html.oldie .container .columns.six {
   width: 29.0625em;
 }
 html.oldie .container .columns.seven {
   width: 34.11458333333333em;
 }
-html.oldie .container .columns.eight,
-html.oldie .container .columns.two-thirds {
+html.oldie .container .columns.eight {
   width: 39.166666666666664em;
 }
-html.oldie .container .columns.nine,
-html.oldie .container .columns.three-fourths {
+html.oldie .container .columns.nine {
   width: 44.21875em;
 }
 html.oldie .container .columns.ten {
@@ -451,30 +406,25 @@ html.oldie .container .offset-one {
 html.oldie .container .offset-two {
   padding-left: 8.854166666666666em;
 }
-html.oldie .container .offset-three,
-html.oldie .container .offset-one-fourth {
+html.oldie .container .offset-three {
   padding-left: 13.90625em;
 }
-html.oldie .container .offset-four,
-html.oldie .container .offset-one-third {
+html.oldie .container .offset-four {
   padding-left: 18.958333333333332em;
 }
 html.oldie .container .offset-five {
   padding-left: 24.010416666666664em;
 }
-html.oldie .container .offset-six,
-html.oldie .container .offset-one-half {
+html.oldie .container .offset-six {
   padding-left: 29.0625em;
 }
 html.oldie .container .offset-seven {
   padding-left: 34.11458333333333em;
 }
-html.oldie .container .offset-eight,
-html.oldie .container .offset-two-thirds {
+html.oldie .container .offset-eight {
   padding-left: 39.166666666666664em;
 }
-html.oldie .container .offset-nine,
-html.oldie .container .offset-three-fourths {
+html.oldie .container .offset-nine {
   padding-left: 44.21875em;
 }
 html.oldie .container .offset-ten {
