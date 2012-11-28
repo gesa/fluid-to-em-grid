@@ -10,18 +10,15 @@
  */
 
 // container sizes
-@small      : 37.5em;
 @standard   : 61.25em;
 @large      : 75em;
 @hidef      : 100em;
 
 @gutter     : 1.25em;
-@padding    : @gutter / 2;
 
-@smallColumn    : ((@small - @padding) / 12) - @gutter;
-@standardColumn : ((@standard - @padding) / 12) - @gutter;
-@largeColumn    : ((@large - @padding) / 12) - @gutter;
-@hidefColumn    : ((@hidef - @padding) / 12) - @gutter;
+@standardColumn : (@standard    - (@gutter * 11)) / 12; // subtract the gutter from cols 2-12, as well as the padding (gutter/2)
+@largeColumn    : (@large       - (@gutter * 11)) / 12;
+@hidefColumn    : (@hidef       - (@gutter * 11)) / 12;
 
 body {
     font-size: 16px;
@@ -29,7 +26,6 @@ body {
 
 // Base container class
 .container {
-    padding: 0 .625em;
     margin: 0 auto;
     clear: both;
 }
@@ -131,13 +127,13 @@ body {
 @media screen and (min-width: 37.5em) {
     .mqCols(auto, 7.416666667%, 1%);
 }
-@media screen and (min-width: 61.25em) {
+@media screen and (min-width: 62.5em) {
     .mqCols(@standard, @standardColumn);
 }
-@media screen and (min-width: 75em) {
+@media screen and (min-width: 76.25em) {
     .mqCols(@large, @largeColumn);
 }
-@media screen and (min-width: 100em) {
+@media screen and (min-width: 101.25em) {
     .mqCols(@hidef, @hidefColumn);
 }
 html.oldie {
