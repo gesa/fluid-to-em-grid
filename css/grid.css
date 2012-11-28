@@ -8,9 +8,6 @@
  * (https://github.com/dryan/css-smart-grid/)
  * v0.2, 2012/10/07
  */
-body {
-  font-size: 16px;
-}
 .container {
   margin: 0 auto;
   clear: both;
