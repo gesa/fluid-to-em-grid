@@ -37,7 +37,13 @@ body {
     visibility: hidden;
 }
 .mqCols(@container: @standard, @column: @standardColumn, @gutter: @gutter) {
+    .padding() when (@container < 60em) {
+        padding : 0 .625em;
+    }
+    .padding() {
+    }
     .container {
+        .padding();
         width: @container;
         .columns {
             float: left;
