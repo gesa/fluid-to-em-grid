@@ -30,77 +30,77 @@ body {
   .container .columns {
     float: left;
     margin-left: 1%;
-    width: 7.333333333%;
+    width: 7.416666667%;
   }
   .container .columns:first-child,
   .container .columns.first {
     margin-left: 0;
   }
   .container .columns.two {
-    width: 15.666666666%;
+    width: 15.833333334%;
   }
   .container .columns.three {
-    width: 23.999999999%;
+    width: 24.250000001%;
   }
   .container .columns.four {
-    width: 32.333333331999995%;
+    width: 32.666666668000005%;
   }
   .container .columns.five {
-    width: 40.666666665%;
+    width: 41.083333335%;
   }
   .container .columns.six {
-    width: 48.999999998%;
+    width: 49.500000002%;
   }
   .container .columns.seven {
-    width: 57.333333331%;
+    width: 57.916666669%;
   }
   .container .columns.eight {
-    width: 65.66666666399999%;
+    width: 66.33333333600001%;
   }
   .container .columns.nine {
-    width: 73.999999997%;
+    width: 74.750000003%;
   }
   .container .columns.ten {
-    width: 82.33333333%;
+    width: 83.16666667%;
   }
   .container .columns.eleven {
-    width: 90.666666663%;
+    width: 91.583333337%;
   }
   .container .columns.twelve {
     width: auto;
   }
   .container .offset-one {
-    padding-left: 8.333333332999999%;
+    padding-left: 8.416666667000001%;
   }
   .container .offset-two {
-    padding-left: 15.666666666%;
+    padding-left: 15.833333334%;
   }
   .container .offset-three {
-    padding-left: 23.999999999%;
+    padding-left: 24.250000001%;
   }
   .container .offset-four {
-    padding-left: 32.333333331999995%;
+    padding-left: 32.666666668000005%;
   }
   .container .offset-five {
-    padding-left: 40.666666665%;
+    padding-left: 41.083333335%;
   }
   .container .offset-six {
-    padding-left: 48.999999998%;
+    padding-left: 49.500000002%;
   }
   .container .offset-seven {
-    padding-left: 57.333333331%;
+    padding-left: 57.916666669%;
   }
   .container .offset-eight {
-    padding-left: 65.66666666399999%;
+    padding-left: 66.33333333600001%;
   }
   .container .offset-nine {
-    padding-left: 73.999999997%;
+    padding-left: 74.750000003%;
   }
   .container .offset-ten {
-    padding-left: 82.33333333%;
+    padding-left: 83.16666667%;
   }
   .container .offset-eleven {
-    padding-left: 90.666666663%;
+    padding-left: 91.583333337%;
   }
   .container .offset-twelve {
     padding-left: 100%;
