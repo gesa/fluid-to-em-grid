@@ -1,0 +1,86 @@
+@charset "utf-8"
+
+/*
+ * grid.less
+ * Created by Aki Braun on 2012/10/06
+ * https://github.com/gesa/fluid-to-em-grid
+ * Use as you wish. Not my fault if things break.
+ * Class names inspired by the smart-grid created by Daniel Ryan
+ * (https://github.com/dryan/css-smart-grid/)
+ * v0.2, 2012/10/07
+ */
+// container sizes
+$standard : 61.25em
+$large : 75em
+$hidef : 100em
+
+// Base container class
+.container
+  clear : both
+  margin : 0 auto
+  padding : 0 .5em
+
+.row:after
+  content : "."
+  clear : both
+  display : block
+  height : 0
+  visibility : hidden
+
+@function calculateGutter($container)
+  @if $container == auto
+    @return 1%
+  @else
+    @return $container / 49
+
+@function calculateColumn($container)
+  @if $container == auto
+    @return 7.416666667%
+  @else
+    @return ($container - (calculateGutter($container) * 11)) / 12
+
+//  | | | | | | | | | | | | |
+=mqCols($container : $standard, $prefix : '')
+
+  $column : calculateColumn($container)
+  $gutter : calculateGutter($container)
+
+  .container
+    padding : 0 $gutter
+    width : $container
+
+    .#{$prefix}columns
+      float : left
+      margin-left : $gutter
+      width : $column
+      &:first-child, &.first
+        margin-left : 0
+
+      $i : 2
+      @each $className in two, three, four, five, six, seven, eight, nine, ten, eleven
+        &.#{$className}
+          width : ($column * $i) + ($gutter * ($i - 1))
+        $i : $i + 1
+
+      $i : 1
+      @each $className in offset-one, offset-two, offset-three, offset-four, offset-five, offset-six, offset-seven, offset-eight, offset-nine, offset-ten, offset-eleven
+        &.#{$className}
+          margin-left : ($column * $i) + ($gutter * ($i - 1))
+        $i : $i + 1
+
++mqCols(auto, fluid-)
+
+@media screen and (min-width: 37.5em)
+  +mqCols(auto)
+
+@media screen and (min-width: 62.5em)
+  +mqCols($standard)
+
+@media screen and (min-width: 76.25em)
+  +mqCols($large)
+
+@media screen and (min-width: 101.25em)
+  +mqCols($hidef)
+
+html.oldie
+  +mqCols($standard)
