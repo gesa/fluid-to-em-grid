@@ -1,16 +1,21 @@
 @charset "utf-8"
 
 /*
- * grid.less
- * Created by Aki Braun on 2012/10/06
+ * grid.sass
+ * Created by Aki Braun on 2013/06/01
  * https://github.com/gesa/fluid-to-em-grid
  * Use as you wish. Not my fault if things break.
  * Class names inspired by the smart-grid created by Daniel Ryan
  * (https://github.com/dryan/css-smart-grid/)
  * v0.2, 2012/10/07
+ *
+ * This grid creates a mixin you can use anywhere (though I don't really
+ * recommend below about 50em) to generate a fluid inner grid, basically a
+ * grid to use inside your grid. (yo dawg...). All you have to do is pass in a
+ * prefix for your columns class.
  */
 // container sizes
-$standard : 61.25em
+$standard : 60em
 $large : 75em
 $hidef : 100em
 
@@ -29,17 +34,16 @@ $hidef : 100em
 
 @function calculateGutter($container)
   @if $container == auto
-    @return 1%
+    @return 2.040816327%
   @else
     @return $container / 49
 
 @function calculateColumn($container)
   @if $container == auto
-    @return 7.416666667%
+    @return 6.462585034%
   @else
     @return ($container - (calculateGutter($container) * 11)) / 12
 
-//  | | | | | | | | | | | | |
 =mqCols($container : $standard, $prefix : '')
 
   $column : calculateColumn($container)
@@ -57,7 +61,7 @@ $hidef : 100em
         margin-left : 0
 
       $i : 2
-      @each $className in two, three, four, five, six, seven, eight, nine, ten, eleven
+      @each $className in two, three, four, five, six, seven, eight, nine, ten, eleven, twelve
         &.#{$className}
           width : ($column * $i) + ($gutter * ($i - 1))
         $i : $i + 1
@@ -65,21 +69,22 @@ $hidef : 100em
       $i : 1
       @each $className in offset-one, offset-two, offset-three, offset-four, offset-five, offset-six, offset-seven, offset-eight, offset-nine, offset-ten, offset-eleven
         &.#{$className}
-          margin-left : ($column * $i) + ($gutter * ($i - 1))
+          margin-left : ($column * $i) + ($gutter * ($i + 1))
+          &:first-child
+            margin-left: ($column * $i) + ($gutter * $i)
         $i : $i + 1
-
-+mqCols(auto, fluid-)
 
 @media screen and (min-width: 37.5em)
   +mqCols(auto)
 
-@media screen and (min-width: 62.5em)
+@media screen and (min-width: 64em)
+
   +mqCols($standard)
 
-@media screen and (min-width: 76.25em)
+@media screen and (min-width: 80em)
   +mqCols($large)
 
-@media screen and (min-width: 101.25em)
+@media screen and (min-width: 104em)
   +mqCols($hidef)
 
 html.oldie
