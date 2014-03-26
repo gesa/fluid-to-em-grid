@@ -1,0 +1,114 @@
+@charset "utf-8";
+
+/*
+ * grid.sass
+ * Created by Aki Braun on 2013/06/01
+ * https://github.com/gesa/fluid-to-em-grid
+ * Use as you wish. Not my fault if things break.
+ * Class names inspired by the smart-grid created by Daniel Ryan
+ * (https://github.com/dryan/css-smart-grid/)
+ * v0.2, 2012/10/07
+ *
+ * This grid creates a mixin you can use anywhere (though I don't really
+ * recommend below about 50em) to generate a fluid inner grid, basically a
+ * grid to use inside your grid. (yo dawg...). All you have to do is pass in a
+ * prefix for your columns class.
+ */
+// container sizes
+$standard: 60em;
+$large: 75em;
+$hidef: 100em;
+
+// Base container class
+.container {
+  clear: both;
+  margin: 0 auto;
+  padding: 0 .5em;
+}
+
+.row:after {
+  content: ".";
+  clear: both;
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+@function calculateGutter($container) {
+  @if $container == auto
+  {
+    @return 2.040816327%
+  } @else {
+    @return $container / 49
+  }
+}
+
+@function calculateColumn($container) {
+  @if $container == auto
+  {
+    @return 6.462585034%
+  } @else {
+    @return ($container - (calculateGutter($container) * 11)) / 12
+  }
+}
+
+@mixin mqCols($container: $standard, $prefix: '') {
+  $column: calculateColumn($container);
+  $gutter: calculateGutter($container);
+
+  .container {
+    padding: 0 $gutter;
+    width: $container;
+  }
+
+  .#{$prefix}columns {
+    float: left;
+    margin-left: $gutter;
+    min-height: .0625rem; // Thanks Chris! http://css-tricks.com/make-sure-columns-dont-collapse-horizontally/
+    width: $column;
+  }
+
+  &:first-child, &.first {
+    margin-left: 0;
+  }
+
+  $i: 2;
+  @each $className in two, three, four, five, six, seven, eight, nine, ten, eleven, twelve {
+    &.#{$className} {
+      width: ($column * $i) + ($gutter * ($i - 1));
+    }
+    $i: $i + 1;
+  }
+
+  $i: 1;
+  @each $className in offset-one, offset-two, offset-three, offset-four, offset-five, offset-six, offset-seven, offset-eight, offset-nine, offset-ten, offset-eleven {
+    &.#{$className} {
+      margin-left: ($column * $i) + ($gutter * ($i + 1));
+    }
+    &:first-child {
+      margin-left: ($column * $i) + ($gutter * $i);
+    }
+    $i: $i + 1;
+  }
+
+}
+
+@media screen and (min-width: 37.5em) {
+  @include mqCols(auto);
+}
+
+@media screen and (min-width: 64em) {
+  @include mqCols($standard);
+}
+
+@media screen and (min-width: 80em) {
+  @include mqCols($large);
+}
+
+@media screen and (min-width: 104em) {
+  @include mqCols($hidef);
+}
+
+html.oldie {
+  @include mqCols($standard);
+}
