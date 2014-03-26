@@ -1,32 +1,101 @@
 @charset "utf-8";
 
-/*
- * grid.sass
- * Created by Aki Braun on 2013/06/01
+/* grid.sass
+ * Created by Aki Braun
  * https://github.com/gesa/fluid-to-em-grid
- * Use as you wish. Not my fault if things break.
  * Class names inspired by the smart-grid created by Daniel Ryan
  * (https://github.com/dryan/css-smart-grid/)
  * v0.2, 2012/10/07
+ * v0.3, 2013/06/01
+ * v0.4, 2014/02/18
+ * v0.5, 2014/03/26
  *
- * This grid creates a mixin you can use anywhere (though I don't really
- * recommend below about 50em) to generate a fluid inner grid, basically a
- * grid to use inside your grid. (yo dawg...). All you have to do is pass in a
- * prefix for your columns class.
+ * This grid is basically infinitely nestable, as the columns are forever and always fluid.
  */
-// container sizes
-$standard: 60em;
-$large: 75em;
-$hidef: 100em;
 
-// Base container class
+/* * Variables * *\
+ * While the calculated grid is output using ems and rems, the below variables
+ * should be set using your targeted pixel sides. Skip the units, those will be
+ * calculated automatically. $remSize refers to the font size of the root
+ * element in pixels—most developers use 16px.
+\* * * * * * * * */
+
+$remSize: 10;
+
+// Viewport sizes:
+// - $small is where the fluid grid begins
+// - $standard is where the grid transitions from fluid to rem
+$small: 600;
+$standard: 980;
+$large: 1200;
+$hidef: 1600;
+
+$columnNames: two, three, four, five, six, seven, eight, nine, ten, eleven, twelve;
+$marginNames: offset-one, offset-two, offset-three, offset-four, offset-five, offset-six, offset-seven, offset-eight, offset-nine, offset-ten, offset-eleven;
+
+
+@mixin generateColumns($column: 6.38%, $gutter: 2.126666667) {
+  $i: 2;
+  @each $className in $columnNames {
+    &.#{$className} {
+      width: ($column * $i) + ($gutter * ($i - 1));
+    }
+    $i: $i + 1;
+  }
+}
+
+@mixin generateMargins($column: 6.38%, $gutter: 2.126666667) {
+  $i: 1;
+  @each $className in $marginNames {
+    &.#{$className} {
+      margin-left: ($column * $i) + ($gutter * ($i + 1));
+      &:first-child {
+        margin-left: ($column * $i) + ($gutter * $i);
+      }
+    }
+    $i: $i + 1;
+  }
+}
+
+@mixin containerGenerator($viewport: $standard, $prefix: '') {
+// Use this mixin at every breakpoint where you want your grid's container to
+// grow.
+  $halfGutter: ($viewport * .020408163);
+  .container {
+    max-width: #{($viewport - $halfGutter) / $remSize}rem;
+  }
+}
+
+@mixin gridGenerator($prefix: '') {
+  // Only include this mixin once, at the smallest viewport where you want your
+  // grid to start... gridding.
+  $column: (100 * .0638) * 1%;
+  $gutter: $column / 3;
+  .container {
+    padding: 1rem ($gutter / 2);
+  }
+
+  .columns {
+    float: left;
+    margin-left: $gutter;
+    min-height: #{1 / $remSize}rem;
+    width: $column;
+    &:first-child, &.first {
+      margin-left: 0;
+    }
+    @include generateColumns();
+    @include generateMargins();
+  }
+}
+
 .container {
   clear: both;
   margin: 0 auto;
-  padding: 0 .5em;
+  padding: 1rem;
+  width: 100%
 }
 
-.row:after {
+.row::after {
   content: ".";
   clear: both;
   display: block;
@@ -34,81 +103,14 @@ $hidef: 100em;
   visibility: hidden;
 }
 
-@function calculateGutter($container) {
-  @if $container == auto
-  {
-    @return 2.040816327%
-  } @else {
-    @return $container / 49
-  }
+@media screen and (min-width: #{$small / 16}em) {
+  @include gridGenerator();
 }
 
-@function calculateColumn($container) {
-  @if $container == auto
-  {
-    @return 6.462585034%
-  } @else {
-    @return ($container - (calculateGutter($container) * 11)) / 12
-  }
+@media screen and (min-width: #{$standard / 16}em) {
+  @include containerGenerator($standard);
 }
 
-@mixin mqCols($container: $standard, $prefix: '') {
-  $column: calculateColumn($container);
-  $gutter: calculateGutter($container);
-
-  .container {
-    padding: 0 $gutter;
-    width: $container;
-  }
-
-  .#{$prefix}columns {
-    float: left;
-    margin-left: $gutter;
-    min-height: .0625rem; // Thanks Chris! http://css-tricks.com/make-sure-columns-dont-collapse-horizontally/
-    width: $column;
-  }
-
-  &:first-child, &.first {
-    margin-left: 0;
-  }
-
-  $i: 2;
-  @each $className in two, three, four, five, six, seven, eight, nine, ten, eleven, twelve {
-    &.#{$className} {
-      width: ($column * $i) + ($gutter * ($i - 1));
-    }
-    $i: $i + 1;
-  }
-
-  $i: 1;
-  @each $className in offset-one, offset-two, offset-three, offset-four, offset-five, offset-six, offset-seven, offset-eight, offset-nine, offset-ten, offset-eleven {
-    &.#{$className} {
-      margin-left: ($column * $i) + ($gutter * ($i + 1));
-    }
-    &:first-child {
-      margin-left: ($column * $i) + ($gutter * $i);
-    }
-    $i: $i + 1;
-  }
-
-}
-
-@media screen and (min-width: 37.5em) {
-  @include mqCols(auto);
-}
-
-@media screen and (min-width: 64em) {
-  @include mqCols($standard);
-}
-
-@media screen and (min-width: 80em) {
-  @include mqCols($large);
-}
-
-@media screen and (min-width: 104em) {
-  @include mqCols($hidef);
-}
-
-html.oldie {
-  @include mqCols($standard);
+@media screen and (min-width: #{$large / 16}em) {
+  @include containerGenerator($large);
 }
